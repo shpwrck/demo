@@ -3,10 +3,6 @@ variable "control_count" {
   description = "Control Plane Count"
 }
 
-variable "location" {
-  default = "East US"
-}
-
 variable "le_email" {
   default = "notanemail@notadomain.com"
 }
