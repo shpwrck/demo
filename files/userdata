@@ -3,5 +3,3 @@
 curl -sL https://releases.rancher.com/install-docker/19.03.sh | sh
 sudo usermod -aG docker ubuntu
 sudo reboot
-#sudo sed -i 's|#AllowTcpForwarding yes|AllowTcpForwarding yes|g' /etc/ssh/sshd_config
-#sudo sed -i 's|#AllowAgentForwarding yes|AllowAgentForwarding yes|g' /etc/ssh/sshd_config
