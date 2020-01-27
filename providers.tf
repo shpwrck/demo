@@ -1,7 +1,3 @@
-###############################################################################
-# Providers
-###############################################################################
-
 provider "kubernetes" {
   host     = rke_cluster.cluster.api_server_url
   username = rke_cluster.cluster.kube_admin_user

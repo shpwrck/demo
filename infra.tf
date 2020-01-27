@@ -11,7 +11,7 @@ module "infra" {
   # Amazon #
   ##########
 
-  source = "./aws_infra"
+  #source = "./aws_infra"
 
   #############
   # Microsoft #
