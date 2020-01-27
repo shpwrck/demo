@@ -13,5 +13,5 @@ variable "zone" {
   description = "Google GCP Zone"
 }
 
-variable "userdatadir" {
+variable "userdata" {
 }

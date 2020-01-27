@@ -22,5 +22,5 @@ variable "tenant_id" {
   default = "...tenant id..."
 }
 
-variable "userdatadir" {
+variable "userdata" {
 }

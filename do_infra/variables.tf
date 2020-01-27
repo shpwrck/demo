@@ -10,5 +10,5 @@ variable "location" {
   default = "nyc1"
 }
 
-variable "userdatadir" {
+variable "userdata" {
 }

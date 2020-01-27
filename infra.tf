@@ -1,22 +1,19 @@
 module "infra" {
-  userdatadir = var.userdatadir
+  userdata = var.userdata
 
   #################
   # Digital Ocean #
   #################
-
   #source = "./do_infra"
 
   ##########
   # Amazon #
   ##########
-
-  #source = "./aws_infra"
+  #source         = "./aws_infra"
 
   #############
   # Microsoft #
   #############
-
   #source = "./azure_infra"
 
   ##########
@@ -24,5 +21,4 @@ module "infra" {
   ##########
 
   #source = "./gcp_infra"
-
 }

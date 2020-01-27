@@ -19,6 +19,6 @@ variable "cert_manager_version" {
   default = "v0.9.1"
 }
 
-variable "userdatadir" {
+variable "userdata" {
   default = "files/userdata"
 }
