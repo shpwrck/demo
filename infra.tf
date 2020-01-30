@@ -29,6 +29,6 @@ module "infra" {
   source     = "./gcp_infra"
   accessfile = var.gcp_accessfile
   project    = var.gcp_project
-  region     = var.region
-  zone       = var.zone
+  region     = var.gcp_region
+  zone       = var.gcp_zone
 }
