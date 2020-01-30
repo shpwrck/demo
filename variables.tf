@@ -24,31 +24,40 @@ variable "userdata" {
   default = "files/userdata"
 }
 
+#################
+# Digital Ocean #
+#################
+
 variable "do_token" {
   description = "The token under which all resources will be provisioned."
 }
-
 variable "do_ssh_key" {
   description = "The unique identifier for an ssh key associated with the target account."
 }
 
+#######
+# GCP #
+#######
+
 variable "gcp_accessfile" {
-  description = ""
 }
+variable "gcp_zone" {
+}
+variable "gcp_project" {
+}
+variable "gcp_region" {
+}
+
+#######
+# AWS #
+#######
 
 variable "aws_access_key" {
-  description = ""
 }
-
 variable "aws_secret_key" {
-  description = ""
 }
-
 variable "aws_vpc_id" {
-  description = ""
 }
-
 variable "aws_subnet_id" {
-  description = ""
 }
 
