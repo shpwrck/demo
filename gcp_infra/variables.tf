@@ -15,3 +15,6 @@ variable "zone" {
 
 variable "userdata" {
 }
+
+variable "accessfile" {
+}

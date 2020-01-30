@@ -96,18 +96,13 @@ resource "helm_release" "rancher" {
     value = "${replace(module.infra.lbpip, ".", "-")}.nip.io"
   }
 
-  set {
-    name  = "ingress.tls.source"
-    value = "letsEncrypt"
-  }
-
-  set {
-    name  = "letsEncrypt.email"
-    value = var.le_email
-  }
-
-  # set {
-  #   name  = "addLocal"
-  #   value = "false"
-  # }
+  #  set {
+  #    name  = "ingress.tls.source"
+  #    value = "letsEncrypt"
+  #  }
+  #
+  #  set {
+  #    name  = "letsEncrypt.email"
+  #    value = var.le_email
+  #  }
 }

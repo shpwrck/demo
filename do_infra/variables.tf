@@ -1,7 +1,3 @@
-variable "token" {
-  default = "...token..."
-}
-
 variable "control_count" {
   default = 3
 }
@@ -11,4 +7,10 @@ variable "location" {
 }
 
 variable "userdata" {
+}
+
+variable "token" {
+}
+
+variable "ssh_key" {
 }

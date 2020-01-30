@@ -1,4 +1,13 @@
+provider "local" {
+  version = "~> 1.4"
+}
+
+provider "rke" {
+  version = "~> 0.14"
+}
+
 provider "kubernetes" {
+  version  = "~> 1.10"
   host     = rke_cluster.cluster.api_server_url
   username = rke_cluster.cluster.kube_admin_user
 
@@ -9,6 +18,7 @@ provider "kubernetes" {
 }
 
 provider "helm" {
+  version         = "~> 0.10"
   tiller_image    = "gcr.io/kubernetes-helm/tiller:v2.16.1"
   service_account = "tiller"
 

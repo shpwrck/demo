@@ -36,11 +36,11 @@ resource rke_cluster "cluster" {
 
 }
 
-#resource "local_file" "linux" {
-#  depends_on = [
-#    rke_cluster.cluster
-#  ]
-#
-#  filename = "~/.kube/config.rancher"
-#  content  = rke_cluster.cluster.kube_config_yaml
-#}
+resource "local_file" "kube_config" {
+  depends_on = [
+    rke_cluster.cluster
+  ]
+
+  filename = var.kube_config_location
+  content  = rke_cluster.cluster.kube_config_yaml
+}

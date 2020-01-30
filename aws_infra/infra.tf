@@ -7,7 +7,7 @@ resource "aws_lb" "rancher" {
   internal           = false
   load_balancer_type = "network"
   subnet_mapping {
-    subnet_id     = "...data.subnet..."
+    subnet_id     = var.subnet_id
     allocation_id = aws_eip.lbpip.id
   }
 }
@@ -37,7 +37,7 @@ resource "aws_lb_target_group" "tg80" {
   target_type = "instance"
   protocol    = "TCP"
   port        = 80
-  vpc_id      = "...data.vpc..."
+  vpc_id      = var.vpc_id
 
   health_check {
     protocol            = "TCP"
@@ -54,7 +54,7 @@ resource "aws_lb_target_group" "tg443" {
   target_type = "instance"
   protocol    = "TCP"
   port        = 443
-  vpc_id      = "...data.vpc..."
+  vpc_id      = var.vpc_id
 
   health_check {
     protocol            = "TCP"
@@ -84,7 +84,7 @@ resource "aws_lb_target_group_attachment" "tga443" {
 resource "aws_security_group" "rancher_sg_allowall" {
   name        = "rancher-allowall"
   description = "Rancher quickstart - allow all traffic"
-  vpc_id      = "...data.vpc..."
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = "0"
@@ -122,8 +122,8 @@ resource "aws_instance" "rancher_server" {
   instance_type   = "t3.medium"
   key_name        = aws_key_pair.quickstart_key_pair.key_name
   security_groups = [aws_security_group.rancher_sg_allowall.id]
-  user_data       = file("${var.userdatadir}")
-  subnet_id       = "...data.subnet..."
+  user_data       = file(var.userdata)
+  subnet_id       = var.subnet_id
 
   tags = {
     Name    = "rancher-server"

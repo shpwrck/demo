@@ -3,5 +3,6 @@
 ###############################################################################
 
 provider "digitalocean" {
-  token = var.token
+  version = "~> 1.13"
+  token   = var.token
 }

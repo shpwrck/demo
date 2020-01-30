@@ -76,7 +76,7 @@ resource "azurerm_virtual_machine" "main" {
   os_profile {
     computer_name  = "rancherhost-${count.index}"
     admin_username = "ubuntu"
-    custom_data    = file("${var.userdatadir}")
+    custom_data    = file(var.userdata)
   }
   os_profile_linux_config {
     disable_password_authentication = true

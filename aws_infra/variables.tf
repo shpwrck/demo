@@ -3,11 +3,9 @@ variable "control_count" {
 }
 
 variable "access_key" {
-  default = "...access key..."
 }
 
 variable "secret_key" {
-  default = "...secret key..."
 }
 
 variable "region" {
@@ -15,4 +13,10 @@ variable "region" {
 }
 
 variable "userdata" {
+}
+
+variable "subnet_id" {
+}
+
+variable "vpc_id" {
 }

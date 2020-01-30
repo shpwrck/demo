@@ -49,7 +49,7 @@ resource "google_compute_instance" "rancherserver" {
 
   metadata = {
     ssh-keys  = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
-    user-data = file("${var.userdatadir}")
+    user-data = file(var.userdata)
   }
 
   provisioner "local-exec" {

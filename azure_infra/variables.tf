@@ -7,19 +7,15 @@ variable "control_count" {
 }
 
 variable "subscription_id" {
-  default = "...subscriptionid..."
 }
 
 variable "client_id" {
-  default = "...clientid..."
 }
 
 variable "client_secret" {
-  default = "...client secretl..."
 }
 
 variable "tenant_id" {
-  default = "...tenant id..."
 }
 
 variable "userdata" {

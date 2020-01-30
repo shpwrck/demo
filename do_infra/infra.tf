@@ -8,8 +8,8 @@ resource "digitalocean_droplet" "controller" {
   region             = var.location
   size               = "s-4vcpu-8gb"
   name               = "rc-${count.index}"
-  ssh_keys           = ["...ssh key id..."]
-  user_data          = file("${var.userdatadir}")
+  ssh_keys           = [var.ssh_key]
+  user_data          = file(var.userdata)
   private_networking = true
 
   provisioner "local-exec" {
