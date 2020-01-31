@@ -7,7 +7,7 @@ resource "digitalocean_droplet" "controller" {
   image              = "ubuntu-18-04-x64"
   region             = var.location
   size               = "s-4vcpu-8gb"
-  name               = "rc-${count.index}"
+  name               = "rancher-${count.index}"
   ssh_keys           = [var.ssh_key]
   user_data          = file(var.userdata)
   private_networking = true

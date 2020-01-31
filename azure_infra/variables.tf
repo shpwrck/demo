@@ -3,6 +3,7 @@ variable "location" {
 }
 
 variable "control_count" {
+  type = number
 }
 
 variable "subscription_id" {

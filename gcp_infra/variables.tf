@@ -1,4 +1,5 @@
 variable "control_count" {
+  type = number
 }
 
 variable "project" {

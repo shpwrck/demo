@@ -1,5 +1,5 @@
 variable "control_count" {
-  default     = 1
+  default     = 3
   description = "Control Plane Count"
 }
 
