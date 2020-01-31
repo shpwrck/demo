@@ -28,7 +28,7 @@ resource "google_compute_target_pool" "main" {
 
 # Configure Resources
 resource "google_compute_instance" "rancherserver" {
-  count        = 3
+  count        = var.control_count
   name         = "rancher-${count.index}"
   machine_type = "n1-standard-2"
   zone         = var.zone

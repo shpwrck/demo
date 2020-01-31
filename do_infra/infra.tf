@@ -47,3 +47,22 @@ resource "digitalocean_loadbalancer" "public" {
 
   droplet_ids = digitalocean_droplet.controller.*.id
 }
+
+resource "digitalocean_firewall" "default" {
+  depends_on = [digitalocean_droplet.controller]
+
+  name        = "rancher"
+  droplet_ids = digitalocean_droplet.controller[*].id
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "80"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+}

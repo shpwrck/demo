@@ -1,3 +1,6 @@
+variable "control_count" {
+}
+
 variable "project" {
   default     = "shipwreck"
   description = "Google GCP Project"

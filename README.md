@@ -2,7 +2,9 @@
 
 ### TODO
 
+- [ ]
 - [X] Finish converting hardcoded values to data
+- [ ] Test Compatibility with 1, and x+1 nodes
 - [ ] Give Remove All Command For When Destroy Fails
 - [ ] Add Optional Regions/Sizes
 - [ ] Make Naming Consistent

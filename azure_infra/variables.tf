@@ -3,7 +3,6 @@ variable "location" {
 }
 
 variable "control_count" {
-  default = 3
 }
 
 variable "subscription_id" {

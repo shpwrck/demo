@@ -1,12 +1,13 @@
 module "infra" {
-  userdata = var.userdata
+  userdata      = var.userdata
+  control_count = var.control_count
 
   #################
   # Digital Ocean #
   #################
-  #source  = "./do_infra"
-  #token   = var.do_token
-  #ssh_key = var.do_ssh_key
+  source  = "./do_infra"
+  token   = var.do_token
+  ssh_key = var.do_ssh_key
 
   ##########
   # Amazon #
@@ -20,11 +21,11 @@ module "infra" {
   #############
   # Microsoft #
   #############
-  source          = "./azure_infra"
-  client_id       = var.azure_client_id
-  tenant_id       = var.azure_tenant_id
-  subscription_id = var.azure_subscription_id
-  client_secret   = var.azure_client_secret
+  #source          = "./azure_infra"
+  #client_id       = var.azure_client_id
+  #tenant_id       = var.azure_tenant_id
+  #subscription_id = var.azure_subscription_id
+  #client_secret   = var.azure_client_secret
 
   ##########
   # Google #

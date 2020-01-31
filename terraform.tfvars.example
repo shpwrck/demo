@@ -1,0 +1,21 @@
+# Digital Ocean
+do_token   = ""
+do_ssh_key = ""
+
+# Google Cloud Platform
+gcp_accessfile = ""
+gcp_project    = ""
+gcp_region     = ""
+gcp_zone       = ""
+
+# Amazon Web Services
+aws_access_key = ""
+aws_secret_key = ""
+aws_vpc_id     = ""
+aws_subnet_id  = ""
+
+# Azure
+azure_client_id       = ""
+azure_tenant_id       = ""
+azure_subscription_id = ""
+azure_client_secret   = ""

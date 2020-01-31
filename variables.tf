@@ -1,5 +1,5 @@
 variable "control_count" {
-  default     = 3
+  default     = 1
   description = "Control Plane Count"
 }
 
@@ -9,7 +9,7 @@ variable "le_email" {
 }
 
 variable "rancher_version" {
-  default = "2.3.4"
+  default = "2.3.5"
 }
 
 variable "cert_manager_version" {

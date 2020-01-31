@@ -67,7 +67,7 @@ resource "azurerm_network_interface" "main" {
 ###########
 
 resource "azurerm_virtual_machine" "main" {
-  count                 = 3
+  count                 = var.control_count
   name                  = "rancher-${count.index}"
   resource_group_name   = azurerm_resource_group.main.name
   location              = var.location

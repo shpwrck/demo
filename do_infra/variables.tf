@@ -1,5 +1,4 @@
 variable "control_count" {
-  default = 3
 }
 
 variable "location" {
