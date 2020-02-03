@@ -12,4 +12,3 @@
 - [ ] Add Tags for all Resources
 - [ ] Add Architecture Diagram
 - [ ] Add Authentication Links
-- [ ] Add Authentication Links
