@@ -2,6 +2,9 @@ variable "control_count" {
   type = number
 }
 
+variable "node_prefix" {
+}
+
 variable "location" {
   default = "nyc1"
 }

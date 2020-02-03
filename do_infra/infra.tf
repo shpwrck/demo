@@ -7,7 +7,7 @@ resource "digitalocean_droplet" "controller" {
   image              = "ubuntu-18-04-x64"
   region             = var.location
   size               = "s-4vcpu-8gb"
-  name               = "rancher-${count.index}"
+  name               = "${var.node_prefix}-${count.index}"
   ssh_keys           = [var.ssh_key]
   user_data          = file(var.userdata)
   private_networking = true
@@ -56,6 +56,12 @@ resource "digitalocean_firewall" "default" {
 
   inbound_rule {
     protocol         = "tcp"
+    port_range       = "22"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
     port_range       = "80"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
@@ -64,5 +70,17 @@ resource "digitalocean_firewall" "default" {
     protocol         = "tcp"
     port_range       = "443"
     source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  inbound_rule {
+    protocol         = "tcp"
+    port_range       = "6443"
+    source_addresses = ["0.0.0.0/0", "::/0"]
+  }
+
+  outbound_rule {
+    protocol              = "tcp"
+    port_range            = "1-65535"
+    destination_addresses = ["0.0.0.0/0", "::/0"]
   }
 }

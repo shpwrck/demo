@@ -1,6 +1,7 @@
 module "infra" {
   userdata      = var.userdata
   control_count = var.control_count
+  node_prefix   = var.node_prefix
 
   #################
   # Digital Ocean #

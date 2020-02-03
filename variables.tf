@@ -1,6 +1,11 @@
 variable "control_count" {
-  default     = 3
+  default     = 1
+  type        = number
   description = "Control Plane Count"
+}
+
+variable "node_prefix" {
+  default = "rancher-mgmt"
 }
 
 variable "le_email" {
