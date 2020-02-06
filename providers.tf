@@ -18,10 +18,7 @@ provider "kubernetes" {
 }
 
 provider "helm" {
-  version         = "~> 0.10"
-  tiller_image    = "gcr.io/kubernetes-helm/tiller:v2.16.1"
-  service_account = "tiller"
-
+  version = "~> 1.0.0"
   kubernetes {
     host     = rke_cluster.cluster.api_server_url
     username = rke_cluster.cluster.kube_admin_user

@@ -13,6 +13,8 @@ resource rke_cluster "cluster" {
     }
   }
 
+  kubernetes_version = "v1.17.2-rancher1-2"
+
   ingress {
     provider = "nginx"
     extra_args = {

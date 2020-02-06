@@ -23,50 +23,10 @@ resource "kubernetes_namespace" "cert" {
   }
 }
 
-# Create tiller service account
-resource "kubernetes_service_account" "tiller" {
-  depends_on = [
-    module.infra,
-    rke_cluster.cluster
-  ]
-
-  metadata {
-    name      = "tiller"
-    namespace = "kube-system"
-  }
-
-  automount_service_account_token = true
-}
-
-# Bind tiller service account to cluster-admin
-resource "kubernetes_cluster_role_binding" "tiller_admin" {
-  depends_on = [
-    module.infra,
-    rke_cluster.cluster,
-    kubernetes_service_account.tiller
-  ]
-
-  metadata {
-    name = "tiller-admin"
-  }
-  role_ref {
-    api_group = "rbac.authorization.k8s.io"
-    kind      = "ClusterRole"
-    name      = "cluster-admin"
-  }
-  subject {
-    kind      = "ServiceAccount"
-    name      = kubernetes_service_account.tiller.metadata[0].name
-    namespace = "kube-system"
-  }
-}
-
 resource "helm_release" "cert_manager" {
   depends_on = [
     module.infra,
-    rke_cluster.cluster,
-    kubernetes_service_account.tiller,
-    kubernetes_cluster_role_binding.tiller_admin
+    rke_cluster.cluster
   ]
 
   name       = "cert-manager"
@@ -80,8 +40,6 @@ resource "helm_release" "rancher" {
   depends_on = [
     module.infra,
     rke_cluster.cluster,
-    kubernetes_service_account.tiller,
-    kubernetes_cluster_role_binding.tiller_admin,
     helm_release.cert_manager
   ]
 

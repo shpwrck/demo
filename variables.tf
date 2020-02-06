@@ -18,7 +18,7 @@ variable "rancher_version" {
 }
 
 variable "cert_manager_version" {
-  default = "v0.9.1"
+  default = "v0.12.0"
 }
 
 variable "kube_config_location" {
